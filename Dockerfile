@@ -1,36 +1,3 @@
-# # Step 1: Use official Node.js image
-# FROM node:16 AS build
-
-# # Step 2: Set the working directory
-# WORKDIR /app
-
-# # Step 3: Copy package.json and package-lock.json
-# COPY package*.json ./
-
-# # Step 4: Install dependencies
-# RUN npm install
-
-# # Step : Install missing web-vitals package
-# RUN npm install web-vitals
-
-# # Step 5: Copy the rest of the app
-# COPY . .
-
-# # Step 6: Build the React app for production
-# RUN npm run build
-
-# # Step 7: Serve the build using a lightweight server
-# FROM nginx:alpine
-
-# # Step 8: Copy the build files from the build stage
-# COPY --from=build /app/build /usr/share/nginx/html
-
-# # Step 9: Expose the port the app will run on
-# EXPOSE 80
-
-# # Step 10: Start nginx server
-# CMD ["nginx", "-g", "daemon off;"]
-
 # Dockerfile for Frontend (React)
 # FROM node:16
 
@@ -47,6 +14,7 @@
 # EXPOSE 3000
 # CMD ["serve", "-s", "build", "-l", "3000"]
 
+# Multistage dockerfile
 # Stage 1: Build the React app
 FROM node:16 as build
 
