@@ -1,2 +1,2 @@
 # sampleReact
-Sample react app with login and logut
+Sample react app with login and logout
